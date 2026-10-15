@@ -84,32 +84,33 @@ DIVIDE(
     0
 )
 
-🔍 Key Insights & Strategic Findings
-Compensation Alignment: Identified departmental variations where average compa-ratio skewed below 96% despite sustained top-quartile performance ratings.
+## 🔍 Key Insights & Strategic Findings
 
-Talent Distribution: Mapped critical mass in the performance vs. potential matrix, isolating specific units requiring immediate succession planning.
+1. **Compensation Alignment:** Identified departmental variations where average compa-ratio skewed below 96% despite sustained top-quartile performance ratings.
+2. **Talent Distribution:** Mapped critical mass in the performance vs. potential matrix, isolating specific units requiring immediate succession planning.
+3. **Workforce Demographics:** Highlighted age group concentrations (predominantly 20–39 age bands) to inform long-term retention and career-path progression policies.
 
-Workforce Demographics: Highlighted age group concentrations (predominantly 20–39 age bands) to inform long-term retention and career-path progression policies.
+---
 
-🛠️ Tools & Technologies Used
-Power BI Desktop: Advanced data visualization, bookmarks, interactive matrix visuals, and card-based KPI layouts.
+## 🛠️ Tools & Technologies Used
 
-Power Query (M): Data ingestion, schema standardization, data type optimization, and star schema dimensional staging.
+- **Power BI Desktop:** Advanced data visualization, bookmarks, interactive matrix visuals, and card-based KPI layouts.
+- **Power Query (M):** Data ingestion, schema standardization, data type optimization, and star schema dimensional staging.
+- **DAX:** Dynamic aggregation, conditional filtering, iterative evaluation (`AVERAGEX`), and relational lookups (`RELATED`).
 
-DAX: Dynamic aggregation, conditional filtering, iterative evaluation (AVERAGEX), and relational lookups (RELATED).
+---
 
-🚀 How to Explore this Project
-Download Project Assets:
+## 🚀 How to Explore this Project
 
-Download the HR_Salary_Equity_Dashboard.pbix file and the source dataset HR_Performance_Talent_Dataset.xlsx directly from the repository root.
+1. **Download Project Assets:**
+   - Download the `HR_Salary_Equity_Dashboard.pbix` file and the source dataset `HR_Performance_Talent_Dataset.xlsx` directly from the repository root.
+2. **Execution:**
+   - Open the `.pbix` file using **Power BI Desktop**.
+   - Interact with the slicers and matrix visuals to analyze internal pay equity and performance metrics across departments.
 
-Execution:
+---
 
-Open the .pbix file using Power BI Desktop.
+## 📬 Contact & Professional Profile
 
-Interact with the slicers and matrix visuals to analyze internal pay equity and performance metrics across departments.
-
-📬 Contact & Professional Profile
-Author: Gonçalo Matias Santos
-
-Email: goncalo.matias.data@gmail.com
+- **Author:** Gonçalo Matias Santos
+- **Email:** goncalo.matias.data@gmail.com
