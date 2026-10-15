@@ -61,9 +61,9 @@ AVERAGEX(
     )
 )
 
-2. High Performers % (Context Modification)
+#### 2. High Performers % (Context Modification)
 Calculates the proportion of top-tier talent by overriding the filter context on evaluation scores:
-
+```dax
 High Performers % = 
 DIVIDE(
     CALCULATE(
@@ -76,7 +76,7 @@ DIVIDE(
 
 3. Turnover Rate (Organizational Attrition)
 Quantifies workforce attrition dynamically across organizational slices:
-
+```dax
 Turnover Rate = 
 DIVIDE(
     SUM(Fact_Performance[LeftCompany]),
