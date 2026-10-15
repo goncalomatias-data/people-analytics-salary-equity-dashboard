@@ -46,43 +46,56 @@ All business logic is isolated within a dedicated `_Measures` table. Key calcula
 - **Talent & Mobility:** `[Avg Performance]`, `[Avg Potential]`, `[Promotion Rate]`
 - **Strategic Indicators:** `[High Performers %]`, `[Average Compa-Ratio]`, `[Turnover Rate]`
 
+---
+
 ### Core Analytical Measures Highlight:
 
 #### 1. Internal Compa-Ratio (Relational Row Iteration)
+
 Iterates over each employee record, retrieving the respective pay grade midpoint from `Dim_JobRole` via `RELATED` to compute salary alignment against internal ranges:
+
 ```dax
-Average Compa-Ratio = 
+Average Compa-Ratio =
 AVERAGEX(
-    Fact_Performance,
-    DIVIDE(
-        Fact_Performance[AnnualSalary],
-        RELATED(Dim_JobRole[SalaryMid]),
-        1
-    )
+Fact_Performance,
+DIVIDE(
+Fact_Performance[AnnualSalary],
+RELATED(Dim_JobRole[SalaryMid]),
+1
 )
+)
+```
 
 #### 2. High Performers % (Context Modification)
-Calculates the proportion of top-tier talent by overriding the filter context on evaluation scores:
-```dax
-High Performers % = 
-DIVIDE(
-    CALCULATE(
-        COUNTROWS(Fact_Performance),
-        Fact_Performance[PerformanceRating] >= 4
-    ),
-    COUNTROWS(Fact_Performance),
-    0
-)
 
-3. Turnover Rate (Organizational Attrition)
-Quantifies workforce attrition dynamically across organizational slices:
+Calculates the proportion of top-tier talent by overriding the filter context on evaluation scores:
+
 ```dax
-Turnover Rate = 
+High Performers % =
 DIVIDE(
-    SUM(Fact_Performance[LeftCompany]),
-    [Total Headcount],
-    0
+CALCULATE(
+COUNTROWS(Fact_Performance),
+Fact_Performance[PerformanceRating] >= 4
+),
+COUNTROWS(Fact_Performance),
+0
 )
+```
+
+#### 3. Turnover Rate (Organizational Attrition)
+
+Quantifies workforce attrition dynamically across organizational slices:
+
+```dax
+Turnover Rate =
+DIVIDE(
+SUM(Fact_Performance[LeftCompany]),
+[Total Headcount],
+0
+)
+```
+
+---
 
 ## 🔍 Key Insights & Strategic Findings
 
@@ -94,23 +107,27 @@ DIVIDE(
 
 ## 🛠️ Tools & Technologies Used
 
-- **Power BI Desktop:** Advanced data visualization, bookmarks, interactive matrix visuals, and card-based KPI layouts.
-- **Power Query (M):** Data ingestion, schema standardization, data type optimization, and star schema dimensional staging.
-- **DAX:** Dynamic aggregation, conditional filtering, iterative evaluation (`AVERAGEX`), and relational lookups (`RELATED`).
+* **Power BI Desktop:** Advanced data visualization, bookmarks, interactive matrix visuals, and card-based KPI layouts.
+* **Power Query (M):** Data ingestion, schema standardization, data type optimization, and star schema dimensional staging.
+* **DAX:** Dynamic aggregation, conditional filtering, iterative evaluation (`AVERAGEX`), and relational lookups (`RELATED`).
 
 ---
 
 ## 🚀 How to Explore this Project
 
 1. **Download Project Assets:**
-   - Download the `HR_Salary_Equity_Dashboard.pbix` file and the source dataset `HR_Performance_Talent_Dataset.xlsx` directly from the repository root.
+* Download the `HR_Salary_Equity_Dashboard.pbix` file and the source dataset `HR_Performance_Talent_Dataset.xlsx` directly from the repository root.
+
+
 2. **Execution:**
-   - Open the `.pbix` file using **Power BI Desktop**.
-   - Interact with the slicers and matrix visuals to analyze internal pay equity and performance metrics across departments.
+* Open the `.pbix` file using **Power BI Desktop**.
+* Interact with the slicers and matrix visuals to analyze internal pay equity and performance metrics across departments.
+
+
 
 ---
 
 ## 📬 Contact & Professional Profile
 
-- **Author:** Gonçalo Matias Santos
-- **Email:** goncalo.matias.data@gmail.com
+* **Author:** Gonçalo Matias Santos
+* **Email:** goncalo.matias.data@gmail.com
